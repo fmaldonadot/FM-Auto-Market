@@ -1,12 +1,20 @@
 <!doctype html>
 <html>
 <head>
+	<title>Index</title>
 
-<title>Index</title>
 </head>
+<body style="background-color: whitesmoke">
 
-<body style="background-color: beige">
-  <h1 sytle: align="center">FMAuto Market</h1>
-  <p sytle: align="center">&nbsp;</p>
+<div class="container">
+	<?php include "includes/header.html"; ?>
+	
+	<div>
+		
+		
+	</div>
+	
+	<?php include "includes/footer.html" ; ?>  
+</div>
 </body>
 </html>
