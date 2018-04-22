@@ -33,7 +33,7 @@
 			if($unameExist == 0 && $emailExist == 0 )
 			{
 				// User can register
-				$errorMsg = "<span style='color:blue'>Register Completed</span>";
+				$errorMsg = "<span style='color:blue'>Inscription terminée</span>";
 				
 				// Create a new object member
 				$newMember = new clsMembers($fName, $lName, $uname, $pwd, $email, $_SESSION['DBConnection']);
@@ -46,15 +46,15 @@
 			{
 				//$errorMsg = "";
 				if ($unameExist > 0 )
-					$errorMsg .= "Register Error.  Username already exist <br>";
+					$errorMsg .= "Erreur. Nom d'utilisateur existe déjà <br>";
 				if ($emailExist > 0 )
-					$errorMsg .= "Register Error.  Email Address already exist";
+					$errorMsg .= "Erreur. L'adresse e-mail existe déjà";
 			}
 			
 		}
 		else
 		{
-			$errorMsg = "Register Error.  Confirm Password Wrong!";
+			$errorMsg = "Erreur. Confirmer le mot de passe est incorrect!";
 		}
 			
 	}
@@ -147,12 +147,12 @@
 		<div>
 			<table width="962px" height="40px" align="center" >
 				<tr>
-					<td width="46" align="right"><a href="index.php" >HOME</a></td>
-					<td width="72" align="right"><a href="#" name="mdlRegister" id="mdlRegister">REGISTER</a></td>
+					<td width="46" align="right"><a href="index.php" >ACCUEIL</a></td>
+					<td width="72" align="right"><a href="#" name="mdlRegister" id="mdlRegister">REGISTRE</a></td>
 					
-					<td width="49" align="right"><a href="#" name="mdlLogin" id="mdlLogin">LOGIN</a></td>
+					<td width="49" align="right"><a href="#" name="mdlLogin" id="mdlLogin">S'IDENTIFIER</a></td>
 							
-					<td width="46" align="right"><a href="includes/changeLanguage.php" title="Go to English"><img src="img/french-flag-button-rectangular.png" width="46" height="30" /></a></td>
+					<td width="46" align="right"><a href="includes/changeLanguage.php?lang='F'" title="Allez au Français"><img src="img/United-Kingdom-Flag.png" width="46" height="30" /></a></td>
 				</tr>
 			</table>     
 		</div>
@@ -163,43 +163,43 @@
 			  <div class="modal-content">
 					<div class="modal-header">
 					  <span class="close">&times;</span>
-					  <h2 style="font-family: Courgette">Member Registration</h2>
+					  <h2 style="font-family: Courgette">Inscription des membres</h2>
 					</div>
 						<div class="modal-body">
 
 							<form action="" method="post">
-
+							<div style="text-align: right; margin-right: 70px">
 								<div class="form-group">
-									<label for="exampleInputFName">First Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+									<label for="exampleInputFName">Prénom&nbsp;&nbsp;</label>
 									<input name="txtFName" type="text" class="form-control" id="exampleInputFName" placeholder="First Name" required><span style="color: red">*</span>
 								</div>
 								<div class="form-group">
-									<label for="exampleInputLName">Last Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+									<label for="exampleInputLName">Nom&nbsp;&nbsp;</label>
 									<input name="txtLName" type="text" class="form-control" id="exampleInputLName" placeholder="Last Name" required><span style="color: red">*</span>
 								</div>
 								<div class="form-group">
-									<label for="exampleInputEmail1">Email address&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+									<label for="exampleInputEmail1">Email address&nbsp;&nbsp;</label>
 									<input name="txtEmail" type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" required><span style="color: red">*</span>
 								</div>
 								<div class="form-group">
-									<label for="exampleInputUName">User Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+									<label for="exampleInputUName">Nom d'utilisateur&nbsp;&nbsp;</label>
 									<input name="txtUsername" type="text" class="form-control" id="exampleInputUName" placeholder="Enter an User Name" required><span style="color: red">*</span>
 								</div>
 								<div class="form-group">
-									<label for="exampleInputPassword1">Password&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+									<label for="exampleInputPassword1">Mot de passe&nbsp;&nbsp;</label>
 									<input name="txtPWD" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required><span style="color: red">*</span>
 								</div>
 								<div class="form-group">
-									<label for="exampleInputConfirmPWD">Confirm Password</label>
+									<label for="exampleInputConfirmPWD">Confirmer le Mot de passe&nbsp;&nbsp;</label>
 									<input name="txtCPWD" type="password" class="form-control" id="exampleInputConfirmPWD" placeholder="Confirm Password" required><span style="color: red">*</span>
 								</div>
-
-								<button name="btnSubmit" type="submit" class="btnSubmit">Submit</button>
+							</div>
+								<button name="btnSubmit" type="submit" class="btnSubmit">Soumettre</button>
 							</form>
 							
 						</div>
 						<div class="modal-footer">
-						  <h3 style="font-family: Courgette">Your next car is here!</h3>
+						  <h3 style="font-family: Courgette">Votre prochaine voiture est là!</h3>
 						</div>
 			</div>
 
@@ -212,26 +212,27 @@
 			  <div class="modal-content">
 					<div class="modal-header">
 					  <span class="closeLogin">&times;</span>
-					  <h2 style="font-family: Courgette">Member Login</h2>
+					  <h2 style="font-family: Courgette">Identifiant</h2>
 					</div>
 						<div class="modal-body">
 
 							<form action="includes/Login.php" method="post">
+							<div style="text-align: right; margin-right: 90px">
 								<div class="form-group">
-									<label for="exampleInputUNameLogin">User Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+									<label for="exampleInputUNameLogin">Nom d'utilisateur&nbsp;&nbsp;</label>
 									<input name="txtUsernameLogin" type="text" class="form-control" id="exampleInputUNameLogin" placeholder="Enter an User Name" required><span style="color: red">*</span>
 								</div>
 								<div class="form-group">
-									<label for="exampleInputPasswordLogin">Password&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+									<label for="exampleInputPasswordLogin">Mot de Passe&nbsp;&nbsp;</label>
 									<input name="txtPWDLogin" type="password" class="form-control" id="exampleInputPasswordLogin" placeholder="Password" required><span style="color: red">*</span>
 								</div>
-								
-								<button name="btnSubmitLogin" type="submit" class="btnSubmit">Login</button>
+							</div>	
+								<button name="btnSubmitLogin" type="submit" class="btnSubmit">Entrer</button>
 							</form>
 							
 						</div>
 						<div class="modal-footer">
-						  <h3 style="font-family: Courgette">Enter to the Best Car Market!</h3>
+						  <h3 style="font-family: Courgette">Entrez dans le meilleur marché de l'automobile!</h3>
 						</div>
 			</div>
 
@@ -259,8 +260,8 @@
 					<tr>
 						<td style="width: 58px; height: 1px;" class="auto-style5">
 
-							<input type="checkbox" name="chkNew" style="width: 19px; margin-left: 90px" value="New"><span style="font-size: 16px; margin-right: 30px">New</span>
-							<input type="checkbox" name="chkUsed" value="Used" ><span style="font-size: 16px;">Used</span>
+							<input type="checkbox" name="chkNew" style="width: 19px; margin-left: 90px" value="New"><span style="font-size: 16px; margin-right: 30px">Neuf</span>
+							<input type="checkbox" name="chkUsed" value="Used" ><span style="font-size: 16px;">D'ocassion</span>
 						</td>
 						<td style="width: 4px; height: 1px;"></td>
 					</tr>
@@ -269,7 +270,7 @@
 
 
 							   <select title="Any Make" id="comboMake" name="cmbMake" style="font-size:16px;" class="auto-style2" onchange="getModel(this.value, 'cmbModel', 'getModels.php')">
-								  <option value = "">Choice a Make</option>
+								  <option value = "">Choisir une marque</option>
 								  <?php
 										  // Looking for cars Makes
 										  $query = "SELECT DISTINCT Make FROM cars";
@@ -286,7 +287,7 @@
 
 
 							<select title="Any Model" id="cmbModel" name="cmbModelN" style="font-size:16px">
-								  <option value = ''>Choice a Model</option>
+								  <option value = ''>Choisir un modèle</option>
 							</select>      			
 
 						</td>
@@ -295,7 +296,7 @@
 				  </tr>
 				  <tr>
 						<td style="width: 58px; height: 29px;" class="auto-style4"></td>
-						<td style="width: 4px; height: 29px;" class="auto-style4"><input name="chkAdvanced" id="check" type="checkbox" value="1" onchange="javascript:showContent()"><span class="auto-style6">Advanced Search</span></td>
+						<td style="width: 4px; height: 29px;" class="auto-style4"><input name="chkAdvanced" id="check" type="checkbox" value="1" onchange="javascript:showContent()"><span class="auto-style6">Recherche Avancée</span></td>
 				  </tr>
 
 
@@ -304,7 +305,7 @@
 					<tr>
 						<td style="height: 2px; width: 146px" class="auto-style7">
 							<select title="Select Min Price" name="cmbMinPrice" id="cmbMinPrice" style="font-size:14px" class="auto-style2" onchange="getModel(this.value, 'cmbMaxPrice', 'getMaxPrice.php')">
-							 <option value = "">Min Price</option>
+							 <option value = "">Min Prix</option>
 							 <?php
 								  for ($i = 1000; $i <= 100000; $i= $i+1000)
 								  {
@@ -316,7 +317,7 @@
 						</td>
 						<td style="width: 104px; height: 2px;" class="auto-style5">
 						<select title="Select Max Price" name="cmbMaxPrice" id="cmbMaxPrice" style="font-size:14px">
-							<option value = "">Max Price</option>
+							<option value = "">Max Prix</option>
 
 							</select></td>
 					</tr>
@@ -344,7 +345,7 @@
 					<tr>
 						<td style="width: 146px" class="auto-style7">
 						<select title="Select Min Year" name="cmbMinYear" id="cmbMinYear" style="font-size:14px" class="auto-style2" onchange="getModel(this.value, 'cmbMaxYear', 'getMaxYear.php')">
-								<option value = "">Min Year</option>
+								<option value = "">Min Année</option>
 								<?php
 								for ($i = 1970; $i <= 2018; $i++)
 								{
@@ -357,7 +358,7 @@
 						</td>
 						<td style="width: 104px; " class="auto-style5">
 							<select title="Select Max Year" name="cmbMaxYear" id="cmbMaxYear" style="font-size:14px">
-								<option value = "">Max Year</option>
+								<option value = "">Max Année</option>
 
 
 							</select></td>
